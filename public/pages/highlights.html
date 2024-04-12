@@ -7,7 +7,7 @@
   <title>Sports Information Website</title>
   <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
-  
+
   <style>
     *{
       box-sizing: border-box;
@@ -20,7 +20,7 @@
       margin:0;  
       overflow-y: hidden;
     }
-    
+
     nav{
       text-align: center;
       word-spacing: 6px;
@@ -41,7 +41,7 @@
       box-shadow: 4px -4.5px 0px 8px rgba(0,161,214,1);
       text-shadow:2px 2px 2px #00A1D6;
 
-      
+
     }
     nav:hover{
       -webkit-box-shadow: 4px -3.4px 0px 8px rgba(0,161,214,1);
@@ -117,7 +117,7 @@
       background-color: #11895E;
       cursor: pointer;
       transition: 0.3s;
-      
+
     }
     .flex-container{
       display: flex;
@@ -139,7 +139,7 @@
       background-color: #78BDFF;
       color: white;
     }
-    
+
     .header a.active {
       background-color: dodgerblue;
       color: white;
@@ -179,131 +179,55 @@
 
     }
     main p{
-      font-size:1.3em;
+      font-size:3em;
       font-family: "Trebuchet MS", Helvetica, sans-serif;
       background-color: white;
       text-align: center;
       color:black;
-      
-      width: 155px;
-      height: 28px;
+
+      width: 50%;
+      height:60%;
       border-radius: 5px;
     }
     footer p{
       font-size: 0.8em;
     }
-    
+    iframe{
+      box-shadow: 13px 5px 5px 0px rgba(0,0,0,0.75);
+      -webkit-box-shadow: 13px 5px 5px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 13px 5px 5px 0px rgba(0,0,0,0.75);
+    }
+
 
   </style>
 
 <body>
-  
- 
-  
+
+
+
   <nav>
     Sports Information Site
     <div class="header" style="margin-top:15px;">
       <div class="header-right">
-        <a class="active" href="index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="#about">About</a>
-        <a href="pages/highlights.html">Highlights</a>
+        <a href="highlights.html">Highlights</a>
       </div>
     </div>
   </nav>
-  
+
   <main>
     <div id="background"> </div>
-    <p>Select a Sport</p>
-    <div class="flex-container">
-      <button class="button" onclick="backSlide(), getSlide()">&#8249;</button>
+    
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/Ht1wQJTpNAA?si=jmuzElc2g-GYxQnw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin-top: 90px;"></iframe>
 
-      <div class="slider"> 
-        
-          <div class="card">
-            <a href="pages/football_leagues.html" style="text-decoration:none; color: inherit;">
-              <img src="https://cdn.britannica.com/51/190751-131-B431C216/soccer-ball-goal.jpg" alt="Avatar" style="width:100%">
-              <div class="label">
-                <h4><b>Football</b></h4>
-              </div>
-            </a>
-          </div>
-        
-        </div> 
-      <button class="button" onclick="advanceSlide(), getSlide()">&#8250;</button>
-    </div>
   </main>
 
   <footer>
     <p>Copyright &copy Offside Offenders (Group) 2024</p>
   </footer>
-  
-  <script>
-    let count = 0;
-
-    let sports = [
-      {
-        slide: 1,
-        title: "football",
-        name: "Football",
-        image: "https://cdn.britannica.com/51/190751-131-B431C216/soccer-ball-goal.jpg",
-      },
-      {
-        slide: 2,
-        title: "unavailable",
-        name: "Basketball",
-        image: "https://img.freepik.com/free-photo/basketball-game-concept_23-2150910692.jpg",
-      },
-      {
-        slide: 3,
-        title: "unavailable",
-        name: "Rugby",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS7JBOWHmpHXU3RqTusQE1M4aK2MRf4KOFhgShCCbn8g&s",
-      }
-    ];
-
-    getSlide();
-
-    function getSlide(){
-      let data = sports;
-      showSlide(data);
-    }
-
-    function backSlide(){
-      count--;
-      if(count < 0){
-        count = sports.length - 1;
-      }
-    }
-    function advanceSlide(){
-      count++;
-      if(count > sports.length - 1){
-        count = 0;
-      }
-    }
-
-    function showSlide(data){
-      let slider = document.querySelector(".slider");
-
-      let html = '';
 
 
-        html = `<div class="card">
-        <a href="pages/${data[count].title}_leagues.html" style="text-decoration:none; color: inherit;">
-          <img src="${data[count].image}" alt="Avatar" style="width:100%">
-          <div class="label">
-            <h4><b>${data[count].name}</b></h4>
-          </div>
-        </a>
-      </div>`;
-
-
-      slider.innerHTML = html;
-    }
-
-
-
-  </script>
-  
 </body>
 
 </html>

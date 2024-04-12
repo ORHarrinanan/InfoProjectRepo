@@ -7,7 +7,7 @@
   <title>Sports Information Website</title>
   <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
-  
+
   <style>
     *{
       box-sizing: border-box;
@@ -17,10 +17,9 @@
       height: inherit;
       width:inherit;
       padding:0;
-      margin:0;  
+      margin:0; 
       overflow-y: hidden;
     }
-    
     nav{
       text-align: center;
       word-spacing: 6px;
@@ -41,8 +40,9 @@
       box-shadow: 4px -4.5px 0px 8px rgba(0,161,214,1);
       text-shadow:2px 2px 2px #00A1D6;
 
-      
+    
     }
+    
     nav:hover{
       -webkit-box-shadow: 4px -3.4px 0px 8px rgba(0,161,214,1);
       -moz-box-shadow: 4px -3.4px 0px 8px rgba(0,161,214,1);
@@ -57,16 +57,22 @@
       margin:0;
 
     }
-    .flex-container{
-      z-index:3;
+    #background{
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.huck-net.co.uk/media/img/images/Types_Of_Lines_On_A_Football_Pitch.jpg');
+      background-size: cover;
+      filter:blur(0.5px);
+      position: absolute;
+      
     }
     .card {
       position: relative;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
       margin-top: 10px;
-      width: 200px;
-      height: 275px;
+      width:10vw;
       display:flex;
       flex-direction: column;
       border:1px solid black;
@@ -74,28 +80,35 @@
       -moz-border-radius: 17px 86px 17px 17px;
       -webkit-border-radius: 17px 86px 17px 17px;
       border: 0px solid #87cefa;
-      z-index: 4;
-      background-color: #FBFBFB;
+      z-index: 2;
+
     } 
     .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2);
     }
 
     .label {
+      z-index: 2;
       padding: 2px 16px;
-      font-size: 1.6em; 
+      font-size: 1.35em; 
       font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-weight: 700;
       text-align: center; 
       letter-spacing: 0.4px;
       text-shadow:2px 2px 2px #BFBFBF;
-      z-index: 2;
+      background-color: #FBFBFB;
+      height: 85px;
+      width: inherit;
     }
     .card img{
-      height:150px;
       border-radius: 17px 86px 0px 0px;
       -moz-border-radius: 17px 86px 0px 0px;
       -webkit-border-radius: 17px 86px 0px 0px;
+      height:200px;
+      width: inherit;
       border: 0px solid #000000;
+      background-color: #FBFBFB;
+      object-fit: cover;
     }
     .button {
       text-decoration: none;
@@ -116,12 +129,20 @@
     .button:hover {
       background-color: #11895E;
       cursor: pointer;
-      transition: 0.3s;
-      
+
     }
     .flex-container{
       display: flex;
       justify-content: space-around;
+    }
+    main p{
+      font-size:1.3em;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      background-color: white;
+      text-align: center;
+      width: 155px;
+      height: 28px;
+      border-radius: 5px;
     }
 
     /* Style the active/current link*/
@@ -139,7 +160,7 @@
       background-color: #78BDFF;
       color: white;
     }
-    
+
     .header a.active {
       background-color: dodgerblue;
       color: white;
@@ -147,6 +168,47 @@
 
     .header a.active:hover {
       background-color: #1D7EDC; 
+    }
+
+    /*Slider Stuff*/
+    .container{
+      padding: 2rem;
+    }
+    .slider-wrapper{
+      max-width: 48rem;
+      margin: 0 auto;
+      
+    }
+    .slider{
+      position:relative;
+      display:flex;
+      overflow:hidden;
+      box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+      border-radius: 17px 86px 17px 17px;
+    }
+    .slider .card{
+      flex: 1 0 100%;
+      scroll-snap-align: start;
+      object-fit: cover;
+      width: inherit;
+      height: inherit;
+      position: absolute;
+    }
+    .slider img{
+      background-size:cover;
+      scroll-snap-align: start;
+    }
+    .back{
+      border-radius: 17px 86px 17px 17px;
+      -moz-border-radius: 17px 86px 17px 17px;
+      -webkit-border-radius: 17px 86px 17px 17px;
+      width: 200px;
+      height: 320px;
+      display:flex;
+      flex-direction: column;
+      background-color: #87cefa;
+      position: relative;
+      z-index: 1;
     }
     footer{
       position:fixed;
@@ -168,115 +230,102 @@
       box-shadow: 4px -2px 0px 8px rgba(0,161,214,1);
       text-shadow:2px 2px 2px #00A1D6;
     }
-    #background{
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://www.huck-net.co.uk/media/img/images/Types_Of_Lines_On_A_Football_Pitch.jpg');
-      background-size: cover;
-      filter:blur(0.5px);
-      position: absolute;
-
-    }
-    main p{
-      font-size:1.3em;
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
-      background-color: white;
-      text-align: center;
-      color:black;
-      
-      width: 155px;
-      height: 28px;
-      border-radius: 5px;
-    }
     footer p{
       font-size: 0.8em;
     }
+
     
 
   </style>
 
 <body>
-  
- 
-  
   <nav>
     Sports Information Site
     <div class="header" style="margin-top:15px;">
       <div class="header-right">
-        <a class="active" href="index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="#about">About</a>
-        <a href="pages/highlights.html">Highlights</a>
+        <a href="highlights.html">Highlights</a>
       </div>
     </div>
   </nav>
-  
+
   <main>
     <div id="background"> </div>
-    <p>Select a Sport</p>
+    <p>Select a League</p>
     <div class="flex-container">
-      <button class="button" onclick="backSlide(), getSlide()">&#8249;</button>
-
-      <div class="slider"> 
-        
-          <div class="card">
-            <a href="pages/football_leagues.html" style="text-decoration:none; color: inherit;">
-              <img src="https://cdn.britannica.com/51/190751-131-B431C216/soccer-ball-goal.jpg" alt="Avatar" style="width:100%">
-              <div class="label">
-                <h4><b>Football</b></h4>
-              </div>
-            </a>
-          </div>
-        
-        </div> 
-      <button class="button" onclick="advanceSlide(), getSlide()">&#8250;</button>
+       <!--<button class="previous button">&#8249;</button> -->
+      <a class="button" onclick="backSlide(), getSlide()">&#8249; </a>
+      
+      <div class="container">
+        <div class="slider-wrapper">
+        <div class="slider">
+          
+          
+          
+        </div>
+          
+          
+        </div>
+      </div>
+      <a class="button" onclick="advanceSlide(), getSlide()">&#8250; </a>
+      
+      
     </div>
+    
   </main>
-
+  
   <footer>
     <p>Copyright &copy Offside Offenders (Group) 2024</p>
   </footer>
-  
+</body>
+
   <script>
     let count = 0;
 
-    let sports = [
+    let leagues = [
       {
         slide: 1,
-        title: "football",
-        name: "Football",
-        image: "https://cdn.britannica.com/51/190751-131-B431C216/soccer-ball-goal.jpg",
+        name: "Premier League",
+        image: "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F23.png",
+        color:"#432060",
       },
       {
         slide: 2,
-        title: "unavailable",
-        name: "Basketball",
-        image: "https://img.freepik.com/free-photo/basketball-game-concept_23-2150910692.jpg",
+        name: "La Liga",
+        image: "https://b.fssta.com/uploads/application/soccer/competition-logos/LaLiga.png",
+        color: "#F0945A",
       },
       {
         slide: 3,
-        title: "unavailable",
-        name: "Rugby",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS7JBOWHmpHXU3RqTusQE1M4aK2MRf4KOFhgShCCbn8g&s",
+        name: "Bundesliga",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWz9sna8Ev71gzQuyQwRAbD_YPSf-iMsnul2arhWDxFQ&s",
+        color:"#ff4b44",
+      },
+      {
+        slide: 4,
+        name: "Serie A",
+        image: "https://yt3.googleusercontent.com/2bMmxx14op_NNRylFwN9dI4mDEWa6O6whg_e-KbDeQwpNvP9uzpp4WjJcJtryP8dos9l0Kcsnw=s900-c-k-c0x00ffffff-no-rj",
+        color:"#13a0fc",
       }
     ];
 
     getSlide();
 
     function getSlide(){
-      let data = sports;
+      let data = leagues;
       showSlide(data);
     }
 
     function backSlide(){
       count--;
       if(count < 0){
-        count = sports.length - 1;
+        count = leagues.length - 1;
       }
     }
     function advanceSlide(){
       count++;
-      if(count > sports.length - 1){
+      if(count > leagues.length - 1){
         count = 0;
       }
     }
@@ -286,24 +335,23 @@
 
       let html = '';
 
-
-        html = `<div class="card">
-        <a href="pages/${data[count].title}_leagues.html" style="text-decoration:none; color: inherit;">
-          <img src="${data[count].image}" alt="Avatar" style="width:100%">
-          <div class="label">
-            <h4><b>${data[count].name}</b></h4>
-          </div>
-        </a>
-      </div>`;
-
+      
+        html = `<div class="back" style="background-color:${data[count].color};"> </div>
+        <div class="card" id="slide${data[count].slide}">
+          <a href="" style="text-decoration:none; color: inherit;">
+            <img src="${data[count].image}" alt="${data[count].name} Logo" style="width:100%">
+            <div class="label">
+              <h4><b>${data[count].name}</b></h4>
+            </div>
+          </a>
+        </div>`;
+      
 
       slider.innerHTML = html;
     }
 
 
-
+    
   </script>
-  
-</body>
 
 </html>
