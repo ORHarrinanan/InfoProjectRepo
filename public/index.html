@@ -1,285 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> The Pigeon Site </title>
-
-    <style>
-
-body{
-    background-color:black;
-    padding: 0;
-    margin: 0;
-    color:black;
-    min-height: 100%;
-    border-spacing: 1.5em;
-}
-
-    header {
-      text-align: left;
-      background-color: lightskyblue;
-    }
-    h1 {
-        display: block;
-        margin: 0;
-    }
-
-    nav{
-        display: block;
-        margin: 0;
-    }
- 
-    nav ul{
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    nav ul li {
-        display: inline;
-        margin: 5px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-    }
-    nav ul li a:hover {
-        
-    }
-
-
-    main{
-        padding: 1em;
-    }
-
-    section{
-        box-sizing: border-box;
-        padding: 1.5em;
-        margin: 1em auto;
-        width: 80%;
-        max-width: 80%;
-    }
-
-     #picture{
-        padding: 1.5em;
-        display: block;
-        height: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: white;
-        width: 80%;
-        border-radius: 4px;
-    }
-
-     #picture h1{
-        font-weight: bold;
-        text-align: left; 
-    }
-
-     #picture img{
-        width:500px;
-    }
-        
-    #famous-pigeons{
-        padding: 1.5em;
-        height: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: white;
-        width: 80%;
-        border-radius: 4px;
-        border-spacing: 1.5em;
-    }
-
-     #famous-pigeons h1{
-        display: block;
-        font-weight: bold;
-        text-align: left;
-    }
-
-    #famous-pigeons table{
-        border-collapse: collapse;
-        padding: 1em;
-
-        
-    }
-
-    #famous-pigeons th{
-        border: 1px solid  rgb(221, 221, 221) ;
-        padding: 1em;
-        text-align: left;
-    }
-
-   #famous-pigeons tr,td{
-        border: 1px  solid  rgb(221, 221, 221) ;
-        padding: 1em;
-        text-align: left;
-    }
-
-    #trivia {
-        padding: 1.5em;
-        border: 1px;
-        height: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: white;
-        width: 80%;
-        border-radius: 4px;
-    }
-
-     #trivia h1{
-        display: block;
-        font-weight: bold;
-        text-align: left;
-    }
-
-
-
-    #trivia summary{
-        background-color: #D9DCD6;
-        padding: 1em;
-        margin: 1em;
-    }
-
-    #trivia details{
-        Margin: 1em;
-        padding: 1em;
-    }
-
-    #trivia p{
-        padding: 1em;
-        margin: 1em;
-        border: 1px black solid;
-    }
-
-
-
-    #contact  {
-        padding: 1.5em;
-        height: 500px;
-        margin-right: auto;
-        margin-left: auto;
-        background-color: white;
-        width: 80%;
-        border-radius: 4px;
-    }
-
-    #contact form{
-        padding: 1em;
-        display: inline;
-    }
-
-    #contact h1{
-        font-weight: bold;
-        text-align: left;
-    }
-
-    #contact label{
-        display: inline;
-
-    }
-
-    #contact textarea{
-        border: black solid;
-
-    }
-
- 
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sports Information Website</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
+  
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body,
+    html{
+      height: inherit;
+      width:inherit;
+      padding:0;
+      margin:0;  
+      overflow-y: hidden;
+    }
+    
+    nav{
+      text-align: center;
+      word-spacing: 6px;
+      width: 100%;
+      height: 100px;
+      padding:10px;
+      border-bottom-left-radius:15px;
+      border-bottom-right-radius:15px;
+      background-color:lightskyblue;
+      overflow:auto;
+      margin-top:0;
+      color:white;
+      font-size:1.5em;
+      font-family: Impact, Charcoal, sans-serif;
+      font-wieght:bold;
+      -webkit-box-shadow: 4px -4.5px 0px 8px rgba(0,161,214,1);
+      -moz-box-shadow: 4px -4.5px 0px 8px rgba(0,161,214,1);
+      box-shadow: 4px -4.5px 0px 8px rgba(0,161,214,1);
+      text-shadow:2px 2px 2px #00A1D6;
+
+      
+    }
+    nav:hover{
+      -webkit-box-shadow: 4px -3.4px 0px 8px rgba(0,161,214,1);
+      -moz-box-shadow: 4px -3.4px 0px 8px rgba(0,161,214,1);
+      box-shadow: 4px -3.4px 0px 8px rgba(0,161,214,1);
+    }
+    main {
+      height: 100vh;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      padding:0;
+      margin:0;
+
+    }
+    .flex-container{
+      z-index:3;
+    }
+    .card {
+      position: relative;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      margin-top: 10px;
+      width: 200px;
+      height: 275px;
+      display:flex;
+      flex-direction: column;
+      border:1px solid black;
+      border-radius: 17px 86px 17px 17px;
+      -moz-border-radius: 17px 86px 17px 17px;
+      -webkit-border-radius: 17px 86px 17px 17px;
+      border: 0px solid #87cefa;
+      z-index: 4;
+      background-color: #FBFBFB;
+    } 
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .label {
+      padding: 2px 16px;
+      font-size: 1.6em; 
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      text-align: center; 
+      letter-spacing: 0.4px;
+      text-shadow:2px 2px 2px #BFBFBF;
+      z-index: 2;
+    }
+    .card img{
+      height:150px;
+      border-radius: 17px 86px 0px 0px;
+      -moz-border-radius: 17px 86px 0px 0px;
+      -webkit-border-radius: 17px 86px 0px 0px;
+      border: 0px solid #000000;
+    }
+    .button {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #04AA6D;
+      color: white;
+      border:50px;
+      border-radius: 50%;
+      margin:5px;
+      width: 50px;
+      height:50px;
+      font-size: 1.5em;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+      margin-top: 20vh;
+    }
+
+    .button:hover {
+      background-color: #11895E;
+      cursor: pointer;
+      transition: 0.3s;
+      
+    }
+    .flex-container{
+      display: flex;
+      justify-content: space-around;
+    }
+
+    /* Style the active/current link*/
+    .header a {
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+      text-shadow:;
+    }
+    .header a:hover {
+      background-color: #78BDFF;
+      color: white;
+    }
+    
+    .header a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+
+    .header a.active:hover {
+      background-color: #1D7EDC; 
+    }
+    footer{
+      position:fixed;
+      min-height: 30px;
+      width: 100%;
+      height: 50px;
+      border-top-left-radius:15px;
+      border-top-right-radius:15px;
+      background-color:lightskyblue;
+      left: 0;
+      bottom: 0;
+      margin-bottom: 0;
+      color:white;
+      font-size:1.3em;
+      font-family: Impact, Charcoal, sans-serif;
+      font-wieght:bold;
+      -webkit-box-shadow: 4px -2px 0px 8px rgba(0,161,214,1);
+      -moz-box-shadow: 4px -2px 0px 8px rgba(0,161,214,1);
+      box-shadow: 4px -2px 0px 8px rgba(0,161,214,1);
+      text-shadow:2px 2px 2px #00A1D6;
+    }
+    #background{
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.huck-net.co.uk/media/img/images/Types_Of_Lines_On_A_Football_Pitch.jpg');
+      background-size: cover;
+      filter:blur(0.5px);
+      position: absolute;
+
+    }
+    main p{
+      font-size:1.3em;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      background-color: white;
+      text-align: center;
+      color:black;
+      
+      width: 155px;
+      height: 28px;
+      border-radius: 5px;
+    }
+    footer p{
+      font-size: 0.8em;
+    }
+    
+
+  </style>
+
 <body>
-    <header>
-        <h1>The Pigeon Site</h1>
-        <nav>
-            <ul>
-                <li><a href="#picture">Picture</a></li>
-                <li><a href="#famous-pigeons">Famous Pigeon</a></li>
-                <li><a href="#trivia">Trivia</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-   <main>
-    <section id="picture">
-        <h1 >Picture</h1>
-        <img src="pigeon.jpg" >
-    </section>
+  
+ 
+  
+  <nav>
+    Sports Information Site
+    <div class="header" style="margin-top:15px;">
+      <div class="header-right">
+        <a class="active" href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="pages/highlights.html">Highlights</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main>
+    <div id="background"> </div>
+    <p>Select a Sport</p>
+    <div class="flex-container">
+      <button class="button" onclick="backSlide(), getSlide()">&#8249;</button>
 
-    <section id="famous-pigeons">
-        <h1>Famous Pigeons</h1>
-        <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Bio</th>
-              <tr>
-            </thead>  
-            <tbody>  
-                <td>G. I. Joe</td>
-                <td>Flown 20 miles to cancel a bombing on friendly British Troops.</td>
-              </tr>
-              <tr>
-                <td>Cher Ami</td>
-                <td>Flown for 25 minutes to deliver a crucial message to base despite being shot at.</td>
-              </tr>
-              <tr>
-                <td>Mocker</td>
-                <td>Delivered a life-saving message after losing its eye from artillery fire.</td>
-              </tr>
-            </tbody>
-        </table>
+      <div class="slider"> 
+        
+          <div class="card">
+            <a href="pages/football_leagues.html" style="text-decoration:none; color: inherit;">
+              <img src="https://cdn.britannica.com/51/190751-131-B431C216/soccer-ball-goal.jpg" alt="Avatar" style="width:100%">
+              <div class="label">
+                <h4><b>Football</b></h4>
+              </div>
+            </a>
+          </div>
+        
+        </div> 
+      <button class="button" onclick="advanceSlide(), getSlide()">&#8250;</button>
+    </div>
+  </main>
 
-    </section>
+  <footer>
+    <p>Copyright &copy Offside Offenders (Group) 2024</p>
+  </footer>
+  
+  <script>
+    let count = 0;
 
-    <section id="trivia">
-        <h1>Trivia</h1>
+    let sports = [
+      {
+        slide: 1,
+        title: "football",
+        name: "Football",
+        image: "https://cdn.britannica.com/51/190751-131-B431C216/soccer-ball-goal.jpg",
+      },
+      {
+        slide: 2,
+        title: "unavailable",
+        name: "Basketball",
+        image: "https://img.freepik.com/free-photo/basketball-game-concept_23-2150910692.jpg",
+      },
+      {
+        slide: 3,
+        title: "unavailable",
+        name: "Rugby",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS7JBOWHmpHXU3RqTusQE1M4aK2MRf4KOFhgShCCbn8g&s",
+      }
+    ];
 
-        <details>
-            <summary>They Understand Space and Time</summary>
-                <p>A 2017 study found pigeons could evaluate the time it takes a digital line to be drawn according to its length.</p>
-        </details>
-    
-        <details>
-            <summary>They are Excellent at Homing</summary>
-                <p>Pigeons can find their way home from 1300 miles away even if they've been transported in complete isolation.</p>
-        </details>
-    
-        <details>
-            <summary>They can diagnose cancer</summary>
-                <p>A 2015 study revealed that pigeons can be trained to diagnose cancer from images with astonishing accuracy of 99%.</p>
-        </details>
+    getSlide();
 
-    </section>
+    function getSlide(){
+      let data = sports;
+      showSlide(data);
+    }
 
+    function backSlide(){
+      count--;
+      if(count < 0){
+        count = sports.length - 1;
+      }
+    }
+    function advanceSlide(){
+      count++;
+      if(count > sports.length - 1){
+        count = 0;
+      }
+    }
 
+    function showSlide(data){
+      let slider = document.querySelector(".slider");
 
-    <section id="contact">
-        <h1>Contact</h1>
-        <form action="/submit" method="post" id="contactform">
-            <label for="Email">Email</label>
-            <input type="email" name="email" required>
-
-            <br>
-
-            <label for="Message">Message</label>
-            <br>
-            <textarea rows="4" cols="30" placeholder="Enter your message here"></textarea>
-
-            <br>
-
-            <input type="submit" value="Submit">
-        </form>
-    </section>
+      let html = '';
 
 
+        html = `<div class="card">
+        <a href="pages/${data[count].title}_leagues.html" style="text-decoration:none; color: inherit;">
+          <img src="${data[count].image}" alt="Avatar" style="width:100%">
+          <div class="label">
+            <h4><b>${data[count].name}</b></h4>
+          </div>
+        </a>
+      </div>`;
 
-</main>
 
-    <footer>
+      slider.innerHTML = html;
+    }
 
-    </footer>
+
+
+  </script>
+  
 </body>
+
 </html>
