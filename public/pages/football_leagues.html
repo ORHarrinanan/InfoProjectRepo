@@ -244,7 +244,7 @@
     <div class="header" style="margin-top:15px;">
       <div class="header-right">
         <a href="../index.html">Home</a>
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
         <a href="highlights.html">Highlights</a>
       </div>
     </div>
@@ -289,25 +289,26 @@
         name: "Premier League",
         image: "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F23.png",
         color:"#432060",
+        link:"../leagues/premierleague.html",
       },
       {
         slide: 2,
         name: "La Liga",
         image: "https://b.fssta.com/uploads/application/soccer/competition-logos/LaLiga.png",
-        color: "#F0945A",
+        color: "#FF615B",
       },
       {
         slide: 3,
+        name: "Serie A",
+        image: "https://yt3.googleusercontent.com/2bMmxx14op_NNRylFwN9dI4mDEWa6O6whg_e-KbDeQwpNvP9uzpp4WjJcJtryP8dos9l0Kcsnw=s900-c-k-c0x00ffffff-no-rj",
+        color:"#13a0fc",
+      },
+      {
+        slide: 4,
         name: "Bundesliga",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWz9sna8Ev71gzQuyQwRAbD_YPSf-iMsnul2arhWDxFQ&s",
         color:"#ff4b44",
       },
-      {
-        slide: 4,
-        name: "Serie A",
-        image: "https://yt3.googleusercontent.com/2bMmxx14op_NNRylFwN9dI4mDEWa6O6whg_e-KbDeQwpNvP9uzpp4WjJcJtryP8dos9l0Kcsnw=s900-c-k-c0x00ffffff-no-rj",
-        color:"#13a0fc",
-      }
     ];
 
     getSlide();
@@ -338,7 +339,7 @@
       
         html = `<div class="back" style="background-color:${data[count].color};"> </div>
         <div class="card" id="slide${data[count].slide}">
-          <a href="" style="text-decoration:none; color: inherit;">
+          <a href="${data[count].link}" style="text-decoration:none; color: inherit;">
             <img src="${data[count].image}" alt="${data[count].name} Logo" style="width:100%">
             <div class="label">
               <h4><b>${data[count].name}</b></h4>

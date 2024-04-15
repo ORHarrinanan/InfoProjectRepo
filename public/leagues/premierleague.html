@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sports Information Website</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="../swiper-bundle.min.css">
+</head>
+
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body,
+    html{
+      height: inherit;
+      width:inherit;
+      padding:0;
+      margin:0;  
+    }
+
+    nav{
+      text-align: center;
+      word-spacing: 6px;
+      width: 100%;
+      height: 100px;
+      padding:10px;
+      border-bottom-left-radius:15px;
+      border-bottom-right-radius:15px;
+      background-color:lightskyblue;
+      overflow:auto;
+      margin-top:0;
+      color:white;
+      font-size:1.5em;
+      font-family: Impact, Charcoal, sans-serif;
+      font-wieght:bold;
+      -webkit-box-shadow: 4px -4.5px 0px 8px rgba(0,161,214,1);
+      -moz-box-shadow: 4px -4.5px 0px 8px rgba(0,161,214,1);
+      box-shadow: 4px -4.5px 0px 8px rgba(0,161,214,1);
+      text-shadow:2px 2px 2px #00A1D6;
+
+
+    }
+    nav:hover{
+      -webkit-box-shadow: 4px -3.4px 0px 8px rgba(0,161,214,1);
+      -moz-box-shadow: 4px -3.4px 0px 8px rgba(0,161,214,1);
+      box-shadow: 4px -3.4px 0px 8px rgba(0,161,214,1);
+    }
+    main {
+      height: 100vh;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      padding:0;
+      margin:0;
+
+    }
+
+
+
+    /* Style the active/current link*/
+    .header a {
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+      text-shadow:;
+    }
+    .header a:hover {
+      background-color: #78BDFF;
+      color: white;
+    }
+
+    .header a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+
+    .header a.active:hover {
+      background-color: #1D7EDC; 
+    }
+    footer{
+      position:fixed;
+      min-height: 30px;
+      width: 100%;
+      height: 50px;
+      border-top-left-radius:15px;
+      border-top-right-radius:15px;
+      background-color:lightskyblue;
+      left: 0;
+      bottom: 0;
+      margin-bottom: 0;
+      color:white;
+      font-size:1.3em;
+      font-family: Impact, Charcoal, sans-serif;
+      font-wieght:bold;
+      -webkit-box-shadow: 4px -2px 0px 8px rgba(0,161,214,1);
+      -moz-box-shadow: 4px -2px 0px 8px rgba(0,161,214,1);
+      box-shadow: 4px -2px 0px 8px rgba(0,161,214,1);
+      text-shadow:2px 2px 2px #00A1D6;
+    }
+    #background{
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.huck-net.co.uk/media/img/images/Types_Of_Lines_On_A_Football_Pitch.jpg');
+      background-size: cover;
+      filter:blur(0.5px);
+      position: absolute;
+
+    }
+    footer p{
+      font-size: 0.8em;
+    }
+    .teams{
+      max-height: 10%;
+     
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    main{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      min-height:100vh;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slide-container{
+      max-width: 1120px;
+      width: 50%;
+      padding: 20px 0;
+      background-color: gray;
+    }
+    .slide-content{
+      margin: 0 40px;
+    }
+    .card{
+      border-radius: 25px;
+      background-color: #FFF;
+      height: 100%;
+    }
+    .image-content{
+      padding: 20px 20px;
+      display: flex;
+      flex-direction: column;
+
+      row-gap: 5px;
+    }
+    .card .card-content{
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .card-image{
+      position:relative;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      background: #FFF;
+      padding:3px;
+    }
+    
+    .card-img .card image{
+      height: 25%;
+      width: 25%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #4070F4;
+    }
+    .name{
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+    }
+    .description{
+      font-size: 14px;
+      color: #707070;
+      text-align: center;
+    }
+    .button{
+      border:none;
+      font-size: 16px;
+      color: #FFF;
+      padding: 8px 16px;
+      background-color:#4070F4;
+      border-radius: 6px;
+      margin: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .button:hover{
+      background: #265DF2;
+    }
+
+
+
+
+
+
+
+    
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      */
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      position: absolute;
+      z-index: 1;
+      width: 120px;
+      top: 100%;
+      left: 50%;
+      margin-left: -60px;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+  </style>
+
+<body>
+
+
+
+
+  
+  <nav>
+    Sports Information Site
+    <div class="header" style="margin-top:15px;">
+      <div class="header-right">
+        <a href="../index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="highlights.html">Highlights</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div id="background"> </div>
+
+    <div  class="slide-container swiper" style="margin-top: -280px;">
+      <div  class="slide-content">
+        <div  class="card-wrapper swiper-wrapper">
+          
+          <div  class="card swiper-slide" style="width:320px;">
+            <div  class="image-content">
+              <span  class="overlay"></span>
+              <div  class="card-image tooltip">
+                <span class="tooltiptext">Real Sociedad</span>
+                <img src="https://apiv3.apifootball.com/badges/153_real-sociedad.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name" style="text-align: center;">Real Sociedad</h2>
+
+              <button class="button">view more</button>
+            </div>
+          </div> 
+
+          <div  class="card swiper-slide" style="width:320px;">
+            <div  class="image-content">
+              <span  class="overlay"></span>
+              <div  class="card-image tooltip">
+                <span class="tooltiptext">Real Sociedad</span>
+                <img src="https://apiv3.apifootball.com/badges/153_real-sociedad.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Real Sociedad</h2>
+              <p class="description">Spain's greatest team ever </p>
+
+              <button class="button">view more</button>
+            </div>
+          </div> 
+
+          <div  class="card swiper-slide" style="width:320px;">
+            <div  class="image-content">
+              <span  class="overlay"></span>
+              <div  class="card-image tooltip">
+                <span class="tooltiptext">Real Sociedad</span>
+                <img src="https://apiv3.apifootball.com/badges/153_real-sociedad.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Real Sociedad</h2>
+              <p class="description">Spain's greatest team ever </p>
+
+              <button class="button">view more</button>
+            </div>
+          </div> 
+          
+        </div>
+      </div>  
+      
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+      
+    </div>
+
+
+
+  </main>
+
+  <footer>
+    <p>Copyright &copy Offside Offenders (Group) 2024</p>
+  </footer>
+
+
+</body>
+
+  <script>
+    async function getData(){
+      const response = await fetch('https://apiv3.apifootball.com/?action=get_teams&league_id=302&APIkey=93569dc5d3595dcf5599537b3231d52321b5bac97afecec1ff90afbf90c62975');
+      const data = await response.json();
+      console.log(data);
+      drawTable(data);
+    }
+
+    //getData();
+
+    function drawTable(data){
+
+      let result = document.querySelector('#container'); 
+      
+      let html='';
+      let count = 0;
+      
+      for(let dat of data){
+        html+=`
+         <img src="${data[count].team_badge}" alt="${data[0].team_name}" class="teams">
+         `;
+        count++;
+      }
+        
+      
+      
+      result.innerHTML = html;
+    }
+
+    
+  </script>
+
+
+  <!--Swiper Javascript-->
+  <script src="../swiper-bundle.min.js"></script>
+  <script src="../script.js"></script>
+</html>
