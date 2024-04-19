@@ -7,9 +7,44 @@
   <title>OFFSIDE<>OBSERVERS</title>
   <link href="style.css" rel="stylesheet" type="text/css"/>
   <link rel="icon" href="../images/offside2.jpeg" type="image/jpeg">
+
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyC_awxjnQKlwMEKR7mlsw2_MWL_oA5isok",
+    authDomain: "info1601-project-webapp.firebaseapp.com",
+    projectId: "info1601-project-webapp",
+    storageBucket: "info1601-project-webapp.appspot.com",
+    messagingSenderId: "555219896879",
+    appId: "1:555219896879:web:f7f9cd4c7db13ac4e8d4da",
+    measurementId: "G-L2JSGBD381"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+  
 </head>
 
   <style>
+
+    nav img{
+      display: block;
+      width: 100px;
+      height: 80px;
+     margin: 0 auto;
+    }
+    
     *{
       box-sizing: border-box;
     }
@@ -175,39 +210,50 @@
       height: 100%;
       background-image: url('https://www.huck-net.co.uk/media/img/images/Types_Of_Lines_On_A_Football_Pitch.jpg');
       background-size: cover;
-      filter:blur(0.5px);
+      filter:blur(3px);
       position: absolute;
 
     }
     main p{
-      font-size:3em;
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
-      background-color: white;
+      display: flex;
+      color: rgba(0,0,0,.6);
+      text-shadow: 3px 2px 3px rgba(255,255,255,.2);
+      font-size:1.5em;
+      font-family: 'Poppins', sans-serif;
+      width: 60vw;
+      padding: 5px;
       text-align: center;
       color:black;
-
-      width: 50%;
-      height:60%;
+      background-color: rgba(255, 255, 253, 0.8);
       border-radius: 5px;
+      display:inline-block;
+    }
+    main img{
+      max-width: 400px;
+      max-height: 130px;
+    }
+    @media only screen and (max-width: 700px) {
+      main p {
+        font-size:1.2em;
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      main p {
+        font-size:1em;
+      }
+    }
+    @media only screen and (max-width: 285px) {
+      main p {
+        font-size:0.8em;
+      }
     }
     footer p{
       font-size: 0.8em;
     }
-    iframe{
-      box-shadow: 13px 5px 5px 0px rgba(0,0,0,0.75);
-      -webkit-box-shadow: 13px 5px 5px 0px rgba(0,0,0,0.75);
-      -moz-box-shadow: 13px 5px 5px 0px rgba(0,0,0,0.75);
-      width: 50%;
-      height: 65%;
-    }
+
+    
 
 
-    nav img{
-      display: block;
-      width: 100px;
-      height: 80px;
-     margin: 0 auto;
-    }
   </style>
 
 <body>
@@ -215,21 +261,31 @@
 
 
   <nav>
-    <img src="../images/offside.png.png">
+    <img src="images/offside.png.png">
     OFFSIDE<>OBSERVERS
     <div class="header" style="margin-top:15px;">
       <div class="header-right">
         <a href="../index.html">Home</a>
-        <a href="about.html">About</a>
-        <a class="active" href="highlights.html">Highlights</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/highlights.html">Highlights</a>
+        <a href="../login.html">Login</a>
+        <a class="active" href="register.html">Register</a>
       </div>
     </div>
   </nav>
 
   <main>
     <div id="background"> </div>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="New Password">
+
+    <div id="button_container">
+      <button onclick="login()">Login</button>
+      <button onclick="register()">Register</button>
+    </div>
     
-    <iframe width="420" height="315" src="https://www.youtube.com/embed/Ht1wQJTpNAA?si=jmuzElc2g-GYxQnw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin-top: 45px;"></iframe>
 
   </main>
 
@@ -239,5 +295,10 @@
 
 
 </body>
+  
 
+  
+
+  <script src="auth.js"></script>
+  
 </html>

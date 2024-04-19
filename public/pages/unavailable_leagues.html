@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Sports Information Website</title>
+  <title>OFFSIDE<>OBSERVERS</title>
   <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="../images/offside2.jpeg" type="image/jpeg">
 </head>
 
   <style>
@@ -25,7 +26,7 @@
       text-align: center;
       word-spacing: 6px;
       width: 100%;
-      height: 100px;
+      height: 180px;
       padding:10px;
       border-bottom-left-radius:15px;
       border-bottom-right-radius:15px;
@@ -75,7 +76,7 @@
       -webkit-border-radius: 17px 86px 17px 17px;
       border: 0px solid #87cefa;
       z-index: 4;
-      background-color: #FBFBFB;
+      background-color: rgba(0,0,0,0.8);
     } 
     .card:hover {
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -180,19 +181,32 @@
     }
     main p{
       font-size:3em;
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
-      background-color: white;
+      font-family: League Spartan;
+      font-weight: bold;
+      background-color: rgba(255,255,255,0.8);
       text-align: center;
       color:black;
 
-      width: 50%;
-      height:60%;
+      
       border-radius: 5px;
+    }
+    .holder{
+      width: 30%;
+      height: 50%;
+      display: flex; 
+      flex-direction: column; 
+      align-items: center;
     }
     footer p{
       font-size: 0.8em;
     }
 
+    nav img{
+      display: block;
+      width: 100px;
+      height: 80px;
+     margin: 0 auto;
+    }
 
   </style>
 
@@ -201,7 +215,8 @@
 
 
   <nav>
-    Sports Information Site
+    <img src="../images/offside.png.png">
+    OFFSIDE<>OBSERVERS
     <div class="header" style="margin-top:15px;">
       <div class="header-right">
         <a href="../index.html">Home</a>
@@ -213,16 +228,37 @@
 
   <main>
     <div id="background"> </div>
-    <p>Coming Soon </p>
-    <img src="https://i.pinimg.com/originals/19/e3/79/19e379ccc6e5099b6278fef0696358b5.png" style="position:fixed; width: 40%; height: 40%; margin-top: 130px;">
+   
+      <div><p style="z-index:3; width:100%; padding: 10px;">Coming Soon! </p></div>
+      <div><img src="https://i.pinimg.com/originals/19/e3/79/19e379ccc6e5099b6278fef0696358b5.png" style="min-width: 100%;height: 50%; position: relative; border-radius:10px;"></div>
+    
+    
    
   </main>
 
   <footer>
-    <p>Copyright &copy Offside Offenders (Group) 2024</p>
+    <p>Copyright &copy OFFSIDE OBSERVERS (Group) 2024</p>
   </footer>
 
 
 </body>
+  
+<script>
+  const randomNumber = Math.floor(Math.random() * 3) + 1;
+  console.log(randomNumber);
+  let background = document.querySelector('#background')
 
+  if(randomNumber === 1){
+    background.style.backgroundImage = `url('https://www.huck-net.co.uk/media/img/images/Types_Of_Lines_On_A_Football_Pitch.jpg')`;
+  }
+  else if(randomNumber === 2){
+      background.style.backgroundImage = "url('https://img.freepik.com/premium-photo/basketball-court-with-lights-shadow-floor-concept-sport-generative-ai_170984-14643.jpg')";
+    background.style.backgroundPosition = "60% 100%";
+    }
+  else{
+    background.style.backgroundImage = "url('https://media.istockphoto.com/id/1056806530/photo/huge-rugby-stadium-with-fans-and-green-grass.jpg?s=612x612&w=0&k=20&c=weS2eBKdelupv7jEqhlMXNA4JWsDIfCT-pOFlRj6ouY=')";
+    background.style.backgroundPosition = "0% 0%";
+  }
+</script>
+  
 </html>
